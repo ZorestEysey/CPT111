@@ -4,6 +4,8 @@
 - `CMYKtoRGB.java` - Lab 2 Challenge - CMYK to RGB
 - `DateToDay.java` - Exercise #2.1 What day is it?
 - `GreatCircleDistance.java` - Exercise #2.2 Great Circle Distance
+- `AreaOfAPentagon.java` - Exercise #2.3 Area of a Pentagon
+- `YIQtoRGB.java` - CW1 #2.1 YIQ to RGB
 ## Tasks
 ### Lab Exercise #2.1 Polar Coordinates
 Write a Java program that converts Cartesian coordinates to Polar coordinates.  
