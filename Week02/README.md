@@ -1,4 +1,4 @@
-# 
+# Week 2: Data Types, Math, Client Input, Debugging
 ## File Structure
 - `PolarCoordinates.java` - Lab Exercise #2.1 Polar Coordinates
 - `CMYKtoRGB.java` - Lab 2 Challenge - CMYK to RGB
