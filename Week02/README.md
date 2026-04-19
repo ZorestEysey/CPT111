@@ -2,7 +2,7 @@
 ## File Structure
 - `PolarCoordinates.java` - Lab Exercise #2.1 Polar Coordinates
 - `CMYKtoRGB.java` - Lab 2 Challenge - CMYK to RGB
-- `DateToday.java` - Exercise # 2.1 What day is it?
+- `DateToday.java` - Exercise #2.1 What day is it?
 - `GreatCircleDistance.java` - Exercise #2.2 Great Circle Distance
 ## Tasks
 ### Lab Exercise #2.1 Polar Coordinates
@@ -75,7 +75,7 @@ red = 128
 green = 0  
 blue = 32
 ```
-### Exercise # 2.1 What day is it?
+### Exercise #2.1 What day is it?
 Write a Java program that takes a date as input and prints the day of the week that date falls on.
 
 Your program should take three integers: y (year), m (month), and d (date).  
