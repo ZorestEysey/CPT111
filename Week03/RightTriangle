@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class RightTriangle {
+    public static void main(String[] arg){
+        Scanner scanner=new Scanner(System.in);
+        String input=scanner.nextLine();
+        int a=Integer.parseInt(input);
+        input=scanner.nextLine();
+        int b=Integer.parseInt(input);
+        input=scanner.nextLine();
+        int c=Integer.parseInt(input);
+        if ( a<=0 || b<=0 || c<=0 ){
+            System.out.println("false");
+        }
+        else{
+            if(Math.pow(a,2)==Math.pow(b,2)+Math.pow(c,2)||Math.pow(b,2)==Math.pow(a,2)+Math.pow(c,2)||Math.pow(c,2)==Math.pow(b,2)+Math.pow(a,2)){
+                System.out.println("true");
+            }
+            else{
+                System.out.println("false");
+            }
+        }
+    }
+}
