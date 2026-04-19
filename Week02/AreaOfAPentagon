@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class AreaOfAPentagon {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String input=scanner.nextLine();
+        double r=Double.parseDouble(input);
+        double a=Math.toRadians(36);
+        double s=2*r*Math.sin(a);
+        double area=(5*s*s)/(4*Math.tan(a));
+        System.out.println("Area = "+area);
+    }
+}
