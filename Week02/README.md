@@ -2,7 +2,7 @@
 ## File Structure
 - `PolarCoordinates.java` - Lab Exercise #2.1 Polar Coordinates
 - `CMYKtoRGB.java` - Lab 2 Challenge - CMYK to RGB
-- `DateToday.java` - Exercise #2.1 What day is it?
+- `DateToDay.java` - Exercise #2.1 What day is it?
 - `GreatCircleDistance.java` - Exercise #2.2 Great Circle Distance
 ## Tasks
 ### Lab Exercise #2.1 Polar Coordinates
