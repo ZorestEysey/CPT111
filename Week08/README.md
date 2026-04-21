@@ -1,4 +1,4 @@
-# Week 6: Introduction to Objects
+# Week 8: More Objects and Inheritance
 ## File Structure
 - `Clock.java` - Exercise #8
 - `AlarmClock.java` - Exercise #8.1 Alarm Clock Constructor 1, Exercise #8.2 Alarm Clock Constructor 2, Exercise #8.3 Alarm Clock Tick
