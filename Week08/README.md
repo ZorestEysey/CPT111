@@ -1,10 +1,194 @@
-# Week 8: More Objects and Inheritance
+# Week 6: Introduction to Objects
 ## File Structure
-
+- `Clock.java` - Exercise #8
+- `AlarmClock.java` - Exercise #8.1 Alarm Clock Constructor 1, Exercise #8.2 Alarm Clock Constructor 2, Exercise #8.3 Alarm Clock Tick
+- `CuckooClock.java` - Exercise #8.4 Cuckoo Clock Constructor, Exercise #8.5 Cuckoo Clock Tick
+- `HalloweenCLock.java` - Exercise #8.6 Halloween Clock Constructor, Exercise #8.7 Halloween Clock Tick
+- `Counter.java` - Lab 8 Challenge - Bounded Counter
+- `BoundedCOunter.java` - Lab 8 Challenge - Bounded Counter
+- `LabeledCiecle.java` - Lab 8 Challenge - Bounded Counter
 ## Tasks
+### Exercise #8
+Update `Clock.java` in `Week06` by `Clock.java` in `Week08`.
+#### Exercise #8.1 Alarm Clock Constructor 1
+Complete the first constructor of the class `AlarmClock`.
 
+It takes four arguments: `h`, `m`, `alarmHours`, `alarmMinutes`, creates a new `AlarmClock` object whose initial time is `h` hours and `m` minutes, and sounds an alarm at `alarmHours` hours and `alarmMinutes` minutes, with the default sound `"Beep beep beep beep!"`.
+#### Exercise #8.2 Alarm Clock Constructor 2
+Complete the second constructor of the class `AlarmClock`.
+
+Overloading the first constructor, it now takes five arguments: `h`, `m`, `alarmHours`, `alarmMinutes`, and `alarmSound`, creates a new `AlarmClock` object whose initial time is `h` hours and `m` minutes, sounds an alarm at `alarmHours` hours and `alarmMinutes` minutes, and sets the sound to `alarmSound`.
+#### Exercise #8.3 Alarm Clock Tick
+Complete the method tick of the class `AlarmClock`.
+
+It overrides the method `tick` of `Clock` and adds 1 minute to the time on this alarm clock.  
+In addition, it sounds (prints) the alarm at the specified time.
+#### Exercise #8.4 Cuckoo Clock Constructor
+Complete the constructor of the class `CuckooClock`.
+
+It takes two arguments: `h` and `m`, and creates a new `CuckooClock` object whose initial time is `h` hours and `m` minutes.
+#### Exercise #8.5 Cuckoo Clock Tick
+Complete the method `tick` of the class `CuckooClock`.
+
+It overrides the method `tick` of `Clock` and adds 1 minute to the time on this Cuckoo clock.  
+
+In addition,  it prints "Cuckoo!" at the start of every hour.  
+It prints one time for each hour.  
+Whether it is morning or night does not change the number of times it prints.
+
+For example, for 14:00, it prints `"Cuckoo!"` two times;  
+and for 00:00 and 12:00, it prints `"Cuckoo!"` twelve times.
+#### Exercise #8.6 Halloween Clock Constructor
+Complete the constructor of the class `HalloweenClock`.
+
+It takes two arguments: `h` and `m`, and creates a new `HalloweenClock` object whose initial time is `h` hours and `m` minutes.
+#### Exercise #8.7 Halloween Clock Tick
+Complete the constructor of the class `HalloweenClock`.
+
+It overrides the method `tick` of `Clock`,  adds 1 minute to the time on this Halloween clock and if any Halloween clocks have ticked three times,  prints `"Halloween!"`.
+### Lab 8 Challenge - Bounded Counter
+Complete the BoundedCounter class that extends the Counter class, including all constructors, getters, setters, and methods exactly as listed in the lab sheet.  
+Lab sheet:
+```java
+public class Counter {  
+    private String name;  
+    private int value; // always >= 0  
+  
+    /* No-arg constructor: name="untitled", value=0 */
+	public Counter() {  
+        this("untitled", 0);  
+    }  
+  
+    /* Full constructor. If initialValue < 0, store 0. If name is null, store "untitled". */  
+    public Counter(String name, int initialValue) {  
+        this.name = (name == null) ? "untitled" : name;  
+        this.value = Math.max(0, initialValue);  
+    }  
+  
+    public String getName() {  
+        return name;  
+    }  
+  
+    public int getValue() {  
+        return value;  
+    }  
+  
+    public void setName(String newName) {  
+        if (newName == null) {  
+            newName = "untitled";  
+        }  
+        this.name = newName;  
+    }  
+  
+    /* Increase value by 1. */  
+    public void increment() {  
+        value++;  
+    }  
+  
+    /* Reset value to 0. */  
+    public void reset() {  
+        value = 0;  
+    }  
+  
+    /* String form: Counter(name="X", value=Y) */  
+    @Override  
+    public String toString() {  
+        return "Counter(name=\"" + name + "\", value=" + value + ")";  
+    }  
+}
+public class BoundedCounter extends Counter {  
+    private int max;  
+	// Lab 8 Challenge  
+  
+    /* No-argument constructor: name="untitled", value=0, max=10 */      public BoundedCounter() {}  
+  
+    /* Full constructor */  
+    public BoundedCounter(String name, int initialValue, int max) {}  
+    public int getMax() {}  
+  
+    public boolean isAtMax() {}  
+  
+    /* Overridden: increment only if not at max */  
+    @Override  
+    public void increment() {}  
+  
+    /* Overridden: provide richer textual output */  
+    @Override  
+    public String toString() {}  
+}
+```
+For example:
+Test:
+```
+BoundedCounter a = new BoundedCounter();
+System.out.println(a);
+a.increment();
+System.out.println(a.getValue());
+System.out.println(a.isAtMax());
+```
+Result:
+```
+BoundedCounter(name="untitled", value=0, max=10)
+1
+false
+```
+
+Test:
+```
+BoundedCounter b = new BoundedCounter("Study reps", 12, 10);
+System.out.println(b);
+b.increment();
+System.out.println(b.getValue());
+System.out.println(b.isAtMax());
+```
+Result:
+```
+BoundedCounter(name="Study reps", value=10, max=10)
+10
+true
+```
+#### CW1 #8.1 Labeled Circle
+Complete the LabeledCircle class, including all constructors, getters, setters, and methods exactly as listed in `CW8.1_Task_Sheet.pdf`.  
+For example:
+Test:
+```
+LabeledCircle a = new LabeledCircle();
+System.out.println(a);
+System.out.println(a.getDiameter());
+```
+Result:
+```
+LabeledCircle(center=(0.0, 0.0), radius=1.0, label="untitled", filled=false)
+2.0
+```
+
+Test:
+```
+LabeledCircle b = new LabeledCircle(2.0, -1.5, 3.0, "Room A", true);
+System.out.println(b.getRadius());
+System.out.println(b.isFilled());
+b.moveBy(-2.0, 1.5);
+System.out.println(b);
+```
+Result:
+```
+3.0
+true
+LabeledCircle(center=(0.0, 0.0), radius=3.0, label="Room A", filled=true)
+```
+
+Test:
+```
+Circle ref = new LabeledCircle(1.0, 1.0, 2.0, "C2", false);
+System.out.println(ref.getArea());
+System.out.println(ref);
+```
+Result:
+```
+12.566370614359172
+LabeledCircle(center=(1.0, 1.0), radius=2.0, label="C2", filled=false)
+```
 ## Approach
-
 ## Notes
 
 - Each task is implemented as a separate class.
