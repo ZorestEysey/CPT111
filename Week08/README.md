@@ -5,8 +5,8 @@
 - `CuckooClock.java` - Exercise #8.4 Cuckoo Clock Constructor, Exercise #8.5 Cuckoo Clock Tick
 - `HalloweenCLock.java` - Exercise #8.6 Halloween Clock Constructor, Exercise #8.7 Halloween Clock Tick
 - `Counter.java` - Lab 8 Challenge - Bounded Counter
-- `BoundedCOunter.java` - Lab 8 Challenge - Bounded Counter
-- `LabeledCiecle.java` - Lab 8 Challenge - Bounded Counter
+- `BoundedCounter.java` - Lab 8 Challenge - Bounded Counter
+- `LabeledCiecle.java` - CW1 #8.1 Labeled Circle
 ## Tasks
 ### Exercise #8
 Update `Clock.java` in `Week06` by `Clock.java` in `Week08`.
