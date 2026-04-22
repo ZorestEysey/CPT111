@@ -23,6 +23,24 @@ Complete the method tick of the class `AlarmClock`.
 
 It overrides the method `tick` of `Clock` and adds 1 minute to the time on this alarm clock.  
 In addition, it sounds (prints) the alarm at the specified time.
+  
+For example:  
+Test:
+```
+AlarmClock ac1 = new AlarmClock(5, 58, 6, 0);
+ac1.tick();
+ac1.tick();
+System.out.println(ac1);
+        
+AlarmClock ac2 = new AlarmClock(14, 29, 14, 30, "Wake Up! The Hero! Kamen Rider!");
+ac2.tick();
+```
+Result:
+```
+Beep beep beep beep!
+06:00
+Wake Up! The Hero! Kamen Rider!
+```
 #### Exercise #8.4 Cuckoo Clock Constructor
 Complete the constructor of the class `CuckooClock`.
 
@@ -38,6 +56,25 @@ Whether it is morning or night does not change the number of times it prints.
 
 For example, for 14:00, it prints `"Cuckoo!"` two times;  
 and for 00:00 and 12:00, it prints `"Cuckoo!"` twelve times.
+
+For example:  
+Test:
+```
+CuckooClock cc1 = new CuckooClock(0, 58);
+cc1.tick();
+cc1.tick();
+System.out.println(cc1);
+        
+CuckooClock cc2 = new CuckooClock(13, 59);
+cc2.tick();
+```
+Result:
+```
+Cuckoo!
+01:00
+Cuckoo!
+Cuckoo!
+```
 #### Exercise #8.6 Halloween Clock Constructor
 Complete the constructor of the class `HalloweenClock`.
 
@@ -46,6 +83,28 @@ It takes two arguments: `h` and `m`, and creates a new `HalloweenClock` object w
 Complete the constructor of the class `HalloweenClock`.
 
 It overrides the method `tick` of `Clock`,  adds 1 minute to the time on this Halloween clock and if any Halloween clocks have ticked three times,  prints `"Halloween!"`.
+
+For example:  
+Test:
+```
+HalloweenClock hc1 = new HalloweenClock(1, 0);
+HalloweenClock hc2 = new HalloweenClock(2, 0);
+hc1.tick();
+hc2.tick();
+hc2.tick();
+        
+HalloweenClock hc3 = new HalloweenClock(3, 30);
+hc1.tick();
+hc2.tick();
+hc3.tick();
+System.out.println(hc3);
+```
+Result:
+```
+Halloween!
+Halloween!
+03:31
+```
 ### Lab 8 Challenge - Bounded Counter
 Complete the BoundedCounter class that extends the Counter class, including all constructors, getters, setters, and methods exactly as listed in the lab sheet.  
 Lab sheet:
