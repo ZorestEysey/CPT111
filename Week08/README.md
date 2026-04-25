@@ -208,7 +208,7 @@ true
 ```
 #### CW1 #8.1 Labeled Circle
 Complete the LabeledCircle class, including all constructors, getters, setters, and methods exactly as listed in `CW8.1_Task_Sheet.pdf`.  
-For example:
+For example:  
 Test:
 ```
 LabeledCircle a = new LabeledCircle();
@@ -248,6 +248,47 @@ Result:
 LabeledCircle(center=(1.0, 1.0), radius=2.0, label="C2", filled=false)
 ```
 ## Approach
+
+- **Exercise #8 Clock Update**  
+  Added public getters `getHours()` and `getMinutes()` to `Clock` so that subclasses (`AlarmClock`, `CuckooClock`, `HalloweenClock`) can read the current time without accessing private fields directly.
+
+- **Exercise #8.1 Alarm Clock Constructor 1**  
+  Calls `super(h, m)` to set the initial clock time, then stores the alarm time (`alarmHours`, `alarmMinutes`) and sets the alarm sound to the default `"Beep beep beep beep!"`.
+
+- **Exercise #8.2 Alarm Clock Constructor 2**  
+  Similar to the first constructor, but also accepts a custom `alarmSound` string and stores it instead of the default.
+
+- **Exercise #8.3 Alarm Clock Tick**  
+  Overrides `tick()`: first calls `super.tick()` to advance the clock by one minute, then checks if the current time (`getHours()` and `getMinutes()`) matches the stored alarm time. If it does, the alarm sound is printed.
+
+- **Exercise #8.4 Cuckoo Clock Constructor**  
+  Simply calls `super(h, m)` to set the initial time. No additional state is needed.
+
+- **Exercise #8.5 Cuckoo Clock Tick**  
+  Overrides `tick()`: after calling `super.tick()`, if the minutes become `0`, it prints `"Cuckoo!"` exactly `getHours()` times (using a loop).
+
+- **Exercise #8.6 Halloween Clock Constructor**  
+  Calls `super(h, m)` to set the initial time. Uses a `static` counter (`numOfTicks`) shared across all `HalloweenClock` instances to track the total number of ticks.
+
+- **Exercise #8.7 Halloween Clock Tick**  
+  Overrides `tick()`: after calling `super.tick()`, increments the shared `numOfTicks`. When the counter reaches 3, it prints `"Halloween!"` and resets the counter to 0.
+
+- **Lab 8 Challenge – BoundedCounter**  
+  Extends `Counter` with a `max` field.  
+  – The no‑arg constructor sets `max = 10` (value and name are handled by `super()`).  
+  – The full constructor passes `name` and `Math.min(initialValue, max)` to `super()`, then stores `max`.  
+  – `getMax()` returns `max`; `isAtMax()` checks whether `getValue() == max`.  
+  – `increment()` is overridden to call `super.increment()` only if the current value is **not** at the maximum.  
+  – `toString()` returns a string of the form `"BoundedCounter(name=\"...\", value=..., max=...)"`.
+
+- **CW1 #8.1 LabeledCircle**  
+  Extends `Circle` by adding a `label` (String) and a `filled` (boolean) field.  
+  – The no‑arg constructor calls `super()` (centre at origin, radius 1.0) and sets `label = "untitled"`, `filled = false`.  
+  – The full constructor calls `super(centerX, centerY, radius)`, then stores `label` (defaulting to `"untitled"` if `null`) and `filled`.  
+  – Getters and setters are provided for both new fields; `setLabel` also guards against `null`.  
+  – `getDiameter()` returns `2.0 * getRadius()`.  
+  – `moveBy(dx, dy)` computes the new centre using the existing getters and applies it with `setCenter`.  
+  – `toString()` overrides `Circle`’s version to include the label (in escaped double quotes) and the filled status: `"LabeledCircle(center=(x, y), radius=r, label=\"...\", filled=bool)"`.
 ## Notes
 
 - Each task is implemented as a separate class.
