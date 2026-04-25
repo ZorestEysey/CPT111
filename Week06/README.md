@@ -135,5 +135,29 @@ false
 ### CW1 #6.1 Circle Class
 Instructed in the file `CW6.1_Task_Sheet.pdf`.
 ## Approach
+
+- **Lab Exercise #6.1 Clock Constructor 1**:  
+  Directly assigns the arguments `h` and `m` to the instance variables `hours` and `minutes`.
+
+- **Lab Exercise #6.2 Clock Constructor 2**:  
+  Parses the `"HH:MM"` string `s` by extracting the first two characters (`s.substring(0,2)`) as hours and the characters after the colon (`s.substring(3,5)`) as minutes, converting both with `Integer.parseInt()`.
+
+- **Lab Exercise #6.3 Clock toString**:  
+  Converts `hours` and `minutes` to strings; prepends a `"0"` when the value is less than 10, then returns the string in the format `"HH:MM"`.
+
+- **Lab Exercise #6.4 Clock isEarlierThan**:  
+  Compares the `hours` of the two clocks. If they are equal, compares the `minutes`. Returns `true` only if this clock's time is strictly earlier than the other clock's time.
+
+- **Lab Exercise #6.5 Clock tick**:  
+  Increments `minutes` by 1. When minutes reach 60, they reset to 0 and hours increase by 1; if hours also exceed 23, they reset to 0, achieving a wrap‑around from `23:59` to `00:00`.
+
+- **Lab Exercise #6.6 Clock tock**:  
+  Converts the current time to total minutes since midnight (`hours * 60 + minutes`), adds `delta`, applies modulo `24 * 60` to handle overflow, then decomposes the result back into `hours` and `minutes`. This approach avoids calling `tick()`.
+
+- **Lab 6 Challenge - Temperature Class**:  
+  Stores the temperature as a `double` in Celsius. The default constructor initialises it to `0.0`. `getFahrenheit()` converts using `celsius * 1.8 + 32`. `increase()` adds `deltaC` (can be negative). `isBelowFreezing()` checks if `celsius < 0.0`. `toString()` rounds both Celsius and Fahrenheit values with `Math.round()` and returns a string like `"0C (32F)"`.
+
+- **CW1 #6.1 Circle Class**:  
+  Maintains three private fields: `centerX`, `centerY`, `radius`. The no‑arg constructor creates a unit circle at the origin. The parameterised constructor defaults the radius to `1.0` if the given value is ≤ 0.0. Setters update the centre coordinates or the radius (if positive). Getters return the individual values. `getArea()` computes `π × radius²` with `Math.PI` and `Math.pow()`. `getCircumference()` uses `2 × π × radius`. `toString()` builds a string in the exact format `"Circle(center=(x.x, y.y), radius=r.r)"` by concatenating `Double.toString()` values.
 ## Notes
 - Each task is implemented as a separate class.
